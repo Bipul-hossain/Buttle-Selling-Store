@@ -1,7 +1,8 @@
 const getCardFromLocalStorage = () => {
-  const data = JSON.parse(localStorage.getItem("card"));
+  const data = localStorage.getItem("card");
   if (data) {
-    return data;
+    const dataParse = JSON.parse(data);
+    return dataParse;
   }
   return [];
 };
