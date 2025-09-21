@@ -16,16 +16,17 @@ const Buttles = ({ buttleData }) => {
 
   const handleCardRemove = (product) => {
     const remainingData = cardProduct.filter((pd) => pd.id !== product.id);
+    console.log("Removing Remaing data", remainingData);
     setCardProduct(remainingData);
+
     removeCardLS(product);
   };
+  console.log("carddd", cardProduct);
 
   useEffect(() => {
     const dataFromLocalStorage = getCardLS();
-    console.log("Local storage Card data", getCardLS());
     const cardDataFull = [];
     if (dataFromLocalStorage.length > 0) {
-      console.log("ki hoilo");
       for (const id of dataFromLocalStorage) {
         const productData = buttleDatas.find(
           (singleData) => singleData.id === id
